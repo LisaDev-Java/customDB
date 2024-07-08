@@ -2,6 +2,7 @@ package org.custom;
 
 import java.time.LocalDate;
 import java.time.Period;
+import java.util.UUID;
 
 
 /**
@@ -10,6 +11,7 @@ import java.time.Period;
  * */
 public class Human {
 
+    private UUID id;
     private String name;
     private Sex sex;
     private Integer age;
@@ -17,6 +19,7 @@ public class Human {
     private LocalDate birthdayDate;
 
     public Human(String name, Sex sex, String job, LocalDate birthdayDate) {
+        this.id = UUID.randomUUID();
         this.name = name;
         this.sex = sex;
         this.job = job;
@@ -26,7 +29,8 @@ public class Human {
     }
 
     public String getDataForSave() {
-        return this.name + ","
+        return this.id + ","
+                + this.name + ","
                 + this.sex + ","
                 + this.age + ","
                 + this.job + ","

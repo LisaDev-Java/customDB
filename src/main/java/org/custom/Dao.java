@@ -19,4 +19,14 @@ public class Dao {
         out.append(data + "\n");
         out.close();
     }
+
+    public static Human getHumanById() {
+        //TODO add a system ID to Human Entity
+        return null;
+    }
+
+    public static Human getHumanByPassNum() {
+        //TODO add a business ID to Human Entity
+        return null;
+    }
 }
