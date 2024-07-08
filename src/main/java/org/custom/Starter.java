@@ -3,7 +3,7 @@ package org.custom;
 import java.io.IOException;
 import java.time.LocalDate;
 
-public class Main {
+public class Starter {
 
     public static void main(String[] args) throws IOException {
         Human lisa = new Human("Lisa", Sex.FEMALE,

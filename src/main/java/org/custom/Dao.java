@@ -11,7 +11,7 @@ import java.io.PrintWriter;
  */
 public class Dao {
 
-    public static String humanTableName = "HumanTable.csv";
+    public static final String humanTableName = "HumanTable.csv";
 
     public static void saveHuman(String data) throws IOException {
         File humanTable = new File(humanTableName);
@@ -19,5 +19,4 @@ public class Dao {
         out.append(data + "\n");
         out.close();
     }
-
 }
