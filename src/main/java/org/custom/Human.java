@@ -3,6 +3,11 @@ package org.custom;
 import java.time.LocalDate;
 import java.time.Period;
 
+
+/**
+ * Entity
+ * Класс - описывающий сущность из реального мира
+ * */
 public class Human {
 
     private String name;
@@ -20,6 +25,14 @@ public class Human {
         this.age = Period.between(birthdayDate, LocalDate.now()).getYears();
     }
 
+    public String getDataForSave() {
+        return this.name + ","
+                + this.sex + ","
+                + this.age + ","
+                + this.job + ","
+                + this.birthdayDate;
+    }
+
     public void goToWork() {
         System.out.println(this.name + " go to " + this.job + " job");
     }
@@ -27,7 +40,6 @@ public class Human {
     public void goToSleep() {
         System.out.println(this.name + " go to sleep");
     }
-
 
     public Integer getAge() {
         return this.age;

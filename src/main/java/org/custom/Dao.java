@@ -1,18 +1,23 @@
 package org.custom;
 
+import java.io.File;
+import java.io.FileWriter;
 import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Path;
+import java.io.PrintWriter;
 
+/**
+ * DAO - Data Access Object
+ * Объект доступа к данным
+ */
 public class Dao {
 
-    public static void createTable() throws IOException {
+    public static String humanTableName = "HumanTable.csv";
 
-        Path humanTablePath = Path.of("/home/vladimir/dev/lisa/customDB/HumanTable.csv");
-
-        if (!Files.exists(humanTablePath)) {
-            Files.createFile(humanTablePath);
-        }
+    public static void saveHuman(String data) throws IOException {
+        File humanTable = new File(humanTableName);
+        PrintWriter out = new PrintWriter(new FileWriter(humanTable, true));
+        out.append(data + "\n");
+        out.close();
     }
 
 }
