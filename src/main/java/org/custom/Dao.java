@@ -13,6 +13,9 @@ public class Dao {
 
     public static final String humanTableName = "HumanTable.csv";
 
+    public Dao() {
+    }
+
     public static void saveHuman(String data) throws IOException {
         File humanTable = new File(humanTableName);
         PrintWriter out = new PrintWriter(new FileWriter(humanTable, true));
@@ -20,7 +23,7 @@ public class Dao {
         out.close();
     }
 
-    public static Human getHumanById() {
+    public static Human getHumanById( Integer id) {
         //TODO add a system ID to Human Entity
         return null;
     }
