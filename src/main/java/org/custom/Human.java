@@ -8,7 +8,7 @@ import java.util.UUID;
 /**
  * Entity
  * Класс - описывающий сущность из реального мира
- * */
+ */
 public class Human {
 
     private UUID id;
@@ -23,7 +23,8 @@ public class Human {
     private String job;
     private LocalDate birthdayDate;
 
-    public Human(String name, Sex sex, String job, LocalDate birthdayDate, Long SNILS,String surname, String patronymic, Integer passportID, Integer passportSeries) {
+    public Human(String name, Sex sex, String job, LocalDate birthdayDate, Long SNILS, String surname,
+                 String patronymic, Integer passportID, Integer passportSeries) {
         this.id = UUID.randomUUID();
         this.age = Period.between(birthdayDate, LocalDate.now()).getYears();
 
@@ -37,6 +38,9 @@ public class Human {
         this.passportID = passportID;
         this.passportSeries = passportSeries;
 
+    }
+
+    public Human() {
     }
 
     public String prepareDataForSave() {
@@ -65,4 +69,87 @@ public class Human {
         return this.age;
     }
 
+    public UUID getId() {
+        return id;
+    }
+
+    public void setId(UUID id) {
+        this.id = id;
+    }
+
+    public Long getSNILS() {
+        return SNILS;
+    }
+
+    public void setSNILS(Long SNILS) {
+        this.SNILS = SNILS;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getSurname() {
+        return surname;
+    }
+
+    public void setSurname(String surname) {
+        this.surname = surname;
+    }
+
+    public String getPatronymic() {
+        return patronymic;
+    }
+
+    public void setPatronymic(String patronymic) {
+        this.patronymic = patronymic;
+    }
+
+    public Sex getSex() {
+        return sex;
+    }
+
+    public void setSex(Sex sex) {
+        this.sex = sex;
+    }
+
+    public void setAge(Integer age) {
+        this.age = age;
+    }
+
+    public Integer getPassportSeries() {
+        return passportSeries;
+    }
+
+    public void setPassportSeries(Integer passportSeries) {
+        this.passportSeries = passportSeries;
+    }
+
+    public Integer getPassportID() {
+        return passportID;
+    }
+
+    public void setPassportID(Integer passportID) {
+        this.passportID = passportID;
+    }
+
+    public String getJob() {
+        return job;
+    }
+
+    public void setJob(String job) {
+        this.job = job;
+    }
+
+    public LocalDate getBirthdayDate() {
+        return birthdayDate;
+    }
+
+    public void setBirthdayDate(LocalDate birthdayDate) {
+        this.birthdayDate = birthdayDate;
+    }
 }

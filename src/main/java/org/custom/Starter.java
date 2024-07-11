@@ -2,6 +2,7 @@ package org.custom;
 
 import java.io.IOException;
 import java.time.LocalDate;
+import java.util.UUID;
 
 public class Starter {
 
@@ -13,6 +14,14 @@ public class Starter {
 
         Dao.saveHuman(lisa.prepareDataForSave());
         Dao.saveHuman(vova.prepareDataForSave());
-        Dao.getHumanById();
+
+
+        Human human = Dao.getHumanById(UUID.fromString("9a6f2b85-89f5-473d-9efe-a192f31cee16"));
+
+        Human human1 = Dao.getHumanBySNILS(1234567L);
+
+        System.out.println(human1.getSex());
+
+        System.out.println(human.getJob());
     }
 }
